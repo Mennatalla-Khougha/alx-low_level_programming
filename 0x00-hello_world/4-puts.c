@@ -1,7 +1,9 @@
 #include <stdio.h>
 
-/*
- * simple file to print a simple statement
+/**
+ * main - Enry point
+ *
+ * Return: print a simple statement
  */
 
 int main(void)
