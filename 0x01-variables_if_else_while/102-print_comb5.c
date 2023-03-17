@@ -10,15 +10,15 @@
 
 int main(void)
 {
-	int i = 0;
-	int j = 0;
-	int m = 0;
-	int n = 1;
+	int i, j, m, n;
 
 	while (i < 10)
 	{
+		j = 0;
 		while (j < 9)
 		{
+			m = i;
+			n = j + 1;
 			while (m < 10)
 			{
 				while (n < 10)
@@ -42,11 +42,8 @@ int main(void)
 				n = 0;
 				m++;
 			}
-			n = j + 1;
-			m = i;
 			j++;
 		}
-		j = 0;
 		i++;
 	}
 
