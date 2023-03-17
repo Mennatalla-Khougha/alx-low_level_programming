@@ -42,7 +42,7 @@ int main(void)
 				n = 0;
 				m++;
 			}
-			m = 0;
+			m = 1;
 			j++;
 		}
 		j = 0;
