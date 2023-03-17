@@ -39,6 +39,7 @@ int main(void)
 					}
 					n++;
 				}
+				n = 0;
 				m++;
 			}
 			n = j + 1;
