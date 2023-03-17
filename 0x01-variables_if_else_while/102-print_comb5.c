@@ -11,9 +11,7 @@
 int main(void)
 {
 	int i = 0;
-	int j;
-	int m;
-	int n;
+	int j, m, n;
 
 	while (i < 10)
 	{
