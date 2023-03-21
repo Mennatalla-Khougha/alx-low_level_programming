@@ -35,18 +35,20 @@ int main(void)
 		module2 = second % breakpoint;
 		half1 = divid1 + divid2;
 		half2 = module1 + module2;
-		if (half2 > 9999999999)
+		if (module1 + module2 > 9999999999)
 		{
 			half1 += 1;
-			half2 %= (breakpoint *10);
+			half2 %= breakpoint;
 		}
 		printf("%lu%lu", half1, half2);
 		if (i < 98)
 			printf(", ");
 		else
 			printf("\n");
-		first = second;
-		second = result;
+		divid1 = divid2;
+		divid2 = half1;
+		module1 = module2;
+		module2 = half2;
 	}
 	return (0);
 }
