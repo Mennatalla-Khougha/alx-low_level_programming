@@ -20,12 +20,13 @@ int main(void)
 		result = first + second;
 		printf("%lu", result);
 		printf(", ");
+		first = second;
+		second = result;
 	}
 	for (i = 93; i < 98; i++)
 	{
-		result = first + second;
-		extra = result / breakpoint;
-		end = result % breakpoint;
+		extra = (first + second) / breakpoint;
+		end = (first + second) % breakpoint;
 		printf("%lu%lu", extra, end);
 		if (i < 98) 
 			printf(", ");
