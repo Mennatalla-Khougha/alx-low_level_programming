@@ -7,15 +7,15 @@
 
 int main(void)
 {
-	int first = 0;
-	int second = 1;
-	int result;
+	long first = 0;
+	long second = 1;
+	long result;
 	int i;
 
 	for (i = 0; i < 50; i++)
 	{
 		result = first + second;
-		printf("%d", result);
+		printf("%ld", result);
 
 		if (i < 49)
 			printf(", ");
