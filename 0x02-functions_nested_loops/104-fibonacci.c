@@ -15,19 +15,19 @@ int main(void)
 	unsigned long int end;
 	int i;
 
-	for (i = 0; i < 98; i++)
+	for (i = 0; i < 93; i++)
 	{
 		result = first + second;
-		if (result < breakpoint)
-			printf("%lu", result);
-		else
-		{
-			extra = result / breakpoint;
-			end = result % breakpoint;
-			printf("%lu%010lu", extra, end);
-		}
-
-		if (i < 97)
+		printf("%lu", result);
+		printf(", ");
+	}
+	for (i = 93; i < 98; i++)
+	{
+		result = first + second;
+		extra = result / breakpoint;
+		end = result % breakpoint;
+		printf("%lu%lu", extra, end);
+		if (i < 98) 
 			printf(", ");
 		else
 			printf("\n");
