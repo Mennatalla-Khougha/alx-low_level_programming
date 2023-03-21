@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * main: Entery point
+ * main - Entery point
  *
  * Description: print _putchar statment.
  *
@@ -18,7 +18,7 @@ int main(void)
 	_putchar('h');
 	_putchar('a');
 	_putchar('r');
-	_putchar('_');
+	_putchar('\n');
 
 	return (0);
 }
