@@ -10,9 +10,11 @@ int main(void)
 	unsigned long int first = 0;
 	unsigned long int second = 1;
 	unsigned long int result;
-	unsigned long int breakpoint = 1000000000000000;
-	unsigned long int extra;
-	unsigned long int end;
+	unsigned long int breakpoint = 10000000000;
+	unsigned long int divid1;
+	unsigned long int divid2;
+	unsigned long int module1;
+	unsigned long int module2;
 	int i;
 
 	for (i = 0; i < 93; i++)
@@ -25,9 +27,11 @@ int main(void)
 	}
 	for (i = 93; i < 99; i++)
 	{
-		extra = (first + second) / breakpoint;
-		end = (first + second) % breakpoint;
-		printf("%lu%lu", extra, end);
+		divid1 = first / breakpoint;
+		divid2 = second / breakpoint;
+		module1 = first % breakpoint;
+		module2 = second % breakpoint;
+		printf("%lu%lu", divid1 + divid2, module1 + module2);
 		if (i < 98)
 			printf(", ");
 		else
