@@ -27,7 +27,7 @@ int main(void)
 	{
 		half1 = divid1 + divid2;
 		half2 = module1 + module2;
-		if (module1 + module2 > 9999999999)
+		if (half2 > 9999999999)
 		{
 			half1 += 1;
 			half2 %= breakpoint;
