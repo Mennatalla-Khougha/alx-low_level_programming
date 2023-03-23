@@ -1,0 +1,44 @@
+#include "main.h"
+
+/**
+ * print_number - print numbers.
+ * @n: int number.
+ * Return: nothing.
+ */
+
+void print_number(int n)
+{
+	int i, j, divide, x, q;
+	int num = 0;
+
+	if (n < 0)
+	{
+		n *= -1;
+		_putchar('-');
+	}
+	if (n > 10)
+	{
+		for (i = n; i > 9; i /= 10)
+			num++;
+
+		for (j = 1; j < num; j *= 10)
+			divide = j;
+		for (x = n; x > 9; x -= q)
+		{
+			_putchar('0' + (n / divide));
+			q = n / divide * divide;
+			n = n - (n / divide * divide);
+			if (divide > 10)
+				divide /= 10;
+		}
+	}
+	_putchar('0' + n % 10);
+	_putchar('\n');
+/*
+	for (x = n; x > 1; x -= q)
+	{
+		_putchar('0' + x / divide);
+		q = (x / divide * divide);
+
+	}*/
+}
