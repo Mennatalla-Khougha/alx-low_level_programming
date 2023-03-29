@@ -12,6 +12,9 @@ char *cap_string(char *str)
 
 	while (str[i] != 0)
 	{
+		if (str[0] > 96 && str[0] < 123)
+			str[0] -= 32;
+
 		switch (str[i - 1])
 		{
 			case ' ':
@@ -29,7 +32,6 @@ char *cap_string(char *str)
 			case '}':
 				if (str[i] > 96 && str[i] < 123)
 					str[i] -= 32;
-				break;
 		}
 		i++;
 	}
