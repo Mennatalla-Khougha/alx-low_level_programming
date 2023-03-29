@@ -20,7 +20,7 @@ char *cap_string(char *str)
 	{
 		for (n = 0; n < j; n++)
 		{
-			if (str[i - 1] == cap[j])
+			if (str[i - 1] == cap[n])
 			{
 				/*
 		switch (str[i - 1])
