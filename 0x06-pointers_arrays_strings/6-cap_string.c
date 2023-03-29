@@ -27,6 +27,7 @@ char *cap_string(char *str)
 			case ')':
 			case '{':
 			case '}':
+			case '\t':
 				if (str[i] > 96 && str[i] < 123)
 					str[i] -= 32;
 		}
