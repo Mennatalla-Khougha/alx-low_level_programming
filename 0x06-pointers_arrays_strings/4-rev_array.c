@@ -11,7 +11,7 @@ void reverse_array(int *a, int n)
 {
 	int x = a[0];
 	int i;
-	
+
 	if (n % 2 == 0)
 	{
 		for (i = 0; i < (n / 2); i++)
@@ -21,7 +21,7 @@ void reverse_array(int *a, int n)
 			a[n - i - 1] = x;
 		}
 	}
-	else 
+	else
 	{
 		for (i = 0; i <= n; i++)
 		{
