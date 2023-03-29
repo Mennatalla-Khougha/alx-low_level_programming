@@ -15,7 +15,7 @@ char *cap_string(char *str)
 		switch (str[i - 1])
 		{
 			case ' ':
-			case '\t':
+			case '	':
 			case '\n':
 			case ',':
 			case ';':
