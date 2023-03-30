@@ -23,7 +23,7 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 	else
 		length = j;
 	if (length + 1 >= size_r)
-	       return (0);
+		return (0);
 	i--, j--;
 	num1 = n1[i] - 48, num2 = n2[j] - 48;
 	r[length + 1] = '\0';
@@ -47,6 +47,6 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 	}
 	if (*r == '0')
 		return (r + 1);
-	else 
+	else
 		return (r);
 }
