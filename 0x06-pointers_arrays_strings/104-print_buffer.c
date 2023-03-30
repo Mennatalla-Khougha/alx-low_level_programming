@@ -10,7 +10,7 @@
 
 void print_buffer(char *b, int size)
 {
-	int i, j, x = 0;
+	int i, j, x = 0, c;
 
 	if (size <= 0)
 	{
@@ -24,6 +24,7 @@ void print_buffer(char *b, int size)
 			j = size - x;
 		else
 			j = 10;
+		printf("%08x:", x);
 		for (i = 0; i < 10; i++)
 		{
 			if (i < j)
@@ -35,7 +36,7 @@ void print_buffer(char *b, int size)
 		}
 		for (i = 0; i < j; i++)
 		{
-			int c = b[x + i];
+			c = b[x + i];
 
 			if (c < 33 || c > 126)
 				c = '.';
