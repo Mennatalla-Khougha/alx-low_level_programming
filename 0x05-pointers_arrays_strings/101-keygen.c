@@ -2,21 +2,26 @@
 #include <stdlib.h>
 #include <time.h>
 
+/**
+ * main - generate random valid passwords.
+ * Return: 0 Success.
+ */
+
 int main(void)
 {
-	  int i = 0, sum = 0;
-	    char password[84];
+	int random;
+	int i;
+	int total;
 
-	      srand(time(0));
+	srand(time(NULL));
 
-	        while (sum < 2772)
-			  {
-				      password[i] = 33 + rand() % 94;
-				          sum += password[i];
-					      i++;
-					        }
+	for(i = 0, total = 2772; total > 126; i++)
+	{
+		random = (rand() % 125) + 1;
+		printf("%c", random);
+		total -= random;
+	}
+	printf("%c", total);
 
-		  password[i] = '\0';
-
-		    printf("%s\n",password);
+	return (0);
 }
