@@ -38,7 +38,7 @@ void print_buffer(char *b, int size)
 		{
 			c = b[x + i];
 
-			if (c < 33 || c > 126)
+			if (c < 32 || c > 132)
 				c = '.';
 			printf("%c", c);
 		}
