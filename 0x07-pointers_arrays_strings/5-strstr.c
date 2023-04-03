@@ -17,9 +17,6 @@ char *_strstr(char *haystack, char *needle)
 	while (needle[needle_len] != 0)
 		needle_len++;
 
-	if (needle_len == 0)
-		return (haystack);
-
 	while (haystack[haystack_len] != 0)
 		haystack_len++;
 
@@ -35,8 +32,8 @@ char *_strstr(char *haystack, char *needle)
 				else
 					k = 0;
 			}
+			break;
 		}
-		break;
 	}
 	if (k == 1)
 		return (p);
