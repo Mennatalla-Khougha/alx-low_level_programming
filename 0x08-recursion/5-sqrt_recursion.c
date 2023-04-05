@@ -3,6 +3,7 @@
 /**
  *_sqrt_recursion - return the natural square root of a number.
  *@n: int.
+ * @x: int used to determine the square root without sagmintation fault.
  * Return: the natural square root of a number, or -1 if none exist.
  */
 int squrt(int n, int x);
@@ -11,6 +12,12 @@ int _sqrt_recursion(int n)
 {
 	return (squrt(n, 1));
 }
+/**
+ * squrt - return the natural square root of a number without sagmintaion fault
+ * @n: int.
+ * @x: int used to determine the square root without sagmintation fault.
+ *Return: the square root of n. or -1 if none exist.
+ */
 
 int squrt(int n, int x)
 {
@@ -20,5 +27,5 @@ int squrt(int n, int x)
 		return (x);
 
 	x++;
-	squrt(n, x);
+	return (squrt(n, x));
 }
