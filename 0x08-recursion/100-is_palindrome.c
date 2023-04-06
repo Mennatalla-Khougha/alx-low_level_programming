@@ -41,10 +41,11 @@ int rev(char *s, int length, int i)
 	{
 		if (i == length || i == length + 1)
 			return (1);
+		length--;
+		i++;
+		return (0 + rev(s, length, i);
 	}
-	length--;
-	i++;
-	return (0 + rev(s, length, i));
+	return (0);
 }
 
 /**
@@ -55,5 +56,5 @@ int rev(char *s, int length, int i)
 
 int is_palindrome(char *s)
 {
-	return (rev(s, _strlen_recursion(s), 0));
+	return (rev(s, _strlen_recursion(s) - 1, 0));
 }
