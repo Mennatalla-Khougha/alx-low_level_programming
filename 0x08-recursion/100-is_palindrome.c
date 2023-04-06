@@ -47,6 +47,7 @@ int _strcmp(char *s1, char *s2)
 	*s1++;
 	*s2++;
 	_strcmp(s1, s2);
+	return (0);
 }
 
 /**
@@ -83,7 +84,8 @@ int is_palindrome(char *s)
 	char x[100];
 
 	rev(s, _strlen_recursion(s), x);
-	int y = _strcmp(s, x);
+	int y;
+       	y = _strcmp(s, x);
 
 	if (y == 0)
 		return (1);
