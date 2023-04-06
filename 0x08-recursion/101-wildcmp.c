@@ -29,13 +29,13 @@ int _strcmp(char *s1, int len1, char *s2, int len2)
 
 	if (s1[len1] == 0)
 	{
-		if (s2[len2] == '*')
+		if (s2[len2] != '*')
+			return (0);
+		else
 		{
 			len2++;
 			return (_strcmp(s1, len1, s2, len2));
 		}
-		else
-			return (0);
 	}
 	return (0);
 }
