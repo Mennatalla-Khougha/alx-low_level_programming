@@ -33,7 +33,7 @@ int _strlen_recursion(char *s)
  * @s1: string.
  * @s2: string.
  * Return: o the same. any other value differant.
- */.
+ */
 
 int _strcmp(char *s1, char *s2)
 {
@@ -80,11 +80,10 @@ void rev(char *s, int length, char *x)
 
 int is_palindrome(char *s)
 {
-	charx[100];
-	char *ptr = x;
+	char x[100];
 
 	rev(s, _strlen_recursion(s), x);
-	int y = _strcmp(s, ptr);
+	int y = _strcmp(s, x);
 
 	if (y == 0)
 		return (1);
