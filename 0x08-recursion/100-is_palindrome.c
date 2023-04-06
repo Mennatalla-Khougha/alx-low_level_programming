@@ -83,11 +83,11 @@ void rev(char *s, int length, char *x)
 
 int is_palindrome(char *s)
 {
-	char x[100];
+	char x[200];
 	int y;
 
 	rev(s, _strlen_recursion(s), x);
-       	y = _strcmp(s, x, 0, 0);
+	y = _strcmp(s, x, 0, 0);
 
 	if (y == 0)
 		return (1);
