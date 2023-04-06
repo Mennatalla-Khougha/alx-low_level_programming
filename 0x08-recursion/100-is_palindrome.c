@@ -43,7 +43,7 @@ int rev(char *s, int length, int i)
 			return (1);
 		length--;
 		i++;
-		return (0 + rev(s, length, i);
+		return (0 + rev(s, length, i));
 	}
 	return (0);
 }
