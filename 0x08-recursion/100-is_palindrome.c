@@ -8,8 +8,7 @@
 
 int is_palindrome(char *s);
 int _strlen_recursion(char *s);
-int _strcmp(char *s1, char *s2, int len1, int len2);
-void rev(char *s, int length, int i);
+int rev(char *s, int length, int i);
 
 /**
  * _strlen_recursion - calculate the length of a string
