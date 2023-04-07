@@ -11,13 +11,16 @@
 int main(int argc, char **argv)
 {
 	int i = 0;
-	int n = atoi(argv[1]);
+	int n;
 
 	if (argc != 2)
 	{
 		printf("Error\n");
 		return (1);
 	}
+
+	n = atoi(argv[1]);
+
 	while (n >= 25)
 	{
 		i++;
