@@ -11,7 +11,7 @@
 int main(int argc, char **argv)
 {
 	int i = 0;
-	int n = atoi(argv[i]);
+	int n = atoi(argv[1]);
 
 	if (argc != 2)
 	{
