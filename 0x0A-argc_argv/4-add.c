@@ -12,8 +12,8 @@
 int main(int argc, char **argv)
 {
 	int i;
-       	int result = 0;
-	long unsigned j;
+	int result = 0;
+	unsigned long j;
 
 	if (argc <= 1)
 	{
@@ -37,7 +37,7 @@ int main(int argc, char **argv)
 	{
 		result += atoi(argv[i]);
 	}
-	
+
 	printf("%d\n", result);
 	return (0);
 }
