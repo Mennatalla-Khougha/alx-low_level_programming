@@ -19,19 +19,30 @@ int main(int argc, char **argv)
 		return (1);
 	}
 	while (n > 25)
-		i++; n -= 25;
-
+	{
+		i++;
+		n -= 25;
+	}
 	while (n > 10)
-		i++; n-= 10;
-
+	{
+		i++;
+		n -= 10;
+	}
 	while (n > 5)
-		i++; n -= 5;
-
+	{
+		i++;
+		n -= 5;
+	}
 	while (n > 2)
-		i++; n -= 2;
-
+	{
+		i++;
+		n -= 2;
+	}
 	while (n > 1)
-		i++; n-= 1;
+	{
+		i++;
+		n -= 1;
+	}
 	printf("%d\n", i);
 	return (0);
 }
