@@ -21,9 +21,9 @@ int main(int argc, char **argv)
 		return (0);
 	}
 
-	for (i = 1, i < argc; i++)
+	for (i = 1; i < argc; i++)
 	{
-		for (j = 0; j < strlen(argv[i]; j++))
+		for (j = 0; j < strlen(argv[i]); j++)
 		{
 			if (argv[i][j] < 48 || argv[i][j] > 57)
 			{
@@ -35,7 +35,7 @@ int main(int argc, char **argv)
 
 	for (i = 1; i < argc; i++)
 	{
-		result += argv[i];
+		result += atoi(rgv[i]);
 	}
 	
 	printf("%d\n", result);
