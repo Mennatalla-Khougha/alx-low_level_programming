@@ -13,7 +13,7 @@ int main(int argc, char **argv)
 {
 	int i;
        	int result = 0;
-	int j;
+	long unsigned j;
 
 	if (argc <= 1)
 	{
