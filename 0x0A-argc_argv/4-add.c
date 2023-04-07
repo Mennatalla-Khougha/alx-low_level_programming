@@ -35,7 +35,7 @@ int main(int argc, char **argv)
 
 	for (i = 1; i < argc; i++)
 	{
-		result += atoi(rgv[i]);
+		result += atoi(argv[i]);
 	}
 	
 	printf("%d\n", result);
