@@ -43,7 +43,7 @@ char **strtow(char *str)
 	}
 	if (words == 0)
 		return (NULL);
-	string = malloc(sizeof(char *) * (words + 1));
+	string = malloc(sizeof(char *) * (words));
 	if (string == NULL)
 		return (NULL);
 	for (i = 0; i < words; i++)
