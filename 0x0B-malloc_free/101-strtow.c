@@ -43,7 +43,7 @@ char **strtow(char *str)
 	}
 	if (words == 0)
 		return (NULL);
-	string = malloc(sizeof(char *) * (words));
+	string = malloc(sizeof(char *) * (words + 1));
 	if (string == NULL)
 	{
 		free(string);
@@ -54,7 +54,7 @@ char **strtow(char *str)
 		while (str[k] == ' ')
 			k++;
 		word_len = len(str + k);
-		string[i] = malloc(sizeof(char) * (word_len));
+		string[i] = malloc(sizeof(char) * (word_len + 1));
 		if (string[i] == NULL)
 		{
 			free(string[i]);
