@@ -35,7 +35,7 @@ char **strtow(char *str)
 		return (NULL);
 	for (q = 0; q < strlen(str); q++)
 	{
-		if (str[q] != '\t' || str[q] != ' ')
+		if (str[q] != '\t' && str[q] != ' ')
 		{
 			words++;
 			q += len(str + q);
