@@ -24,11 +24,11 @@ char *argstostr(int ac, char **av)
 
 	for (i = 0; i < ac; i++)
 	{
-		for (j = 0; j < strlen(av[i]); i++; l++)
+		for (j = 0; j < strlen(av[i]); i++, l++)
 		{
 			str[l] = av[i][j];
 		}
 		str[l++] = '\n';
 	}
 	return (str);
-
+}
