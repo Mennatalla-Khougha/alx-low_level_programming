@@ -28,7 +28,7 @@ int len(char *str)
 char **strtow(char *str)
 {
 	unsigned long int q;
-	int i, j, k = 0, words = 0, word_len = 0, x;
+	int i, j, k = 0, words = 0, word_len = 0;
 	char **string;
 
 	if (str == NULL)
