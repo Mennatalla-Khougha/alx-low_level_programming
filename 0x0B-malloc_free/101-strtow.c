@@ -27,10 +27,11 @@ int len(char *str)
 
 char **strtow(char *str)
 {
-	int i, j, k = 0, words = 0, word_len = 0;
+	unsigned long int j;
+	int i, k = 0, words = 0, word_len = 0;
 	char **string;
 
-	if (str == NULL || str == "")
+	if (str == NULL)
 		return (NULL);
 	for (j = 0; j < strlen(str); j++)
 	{
