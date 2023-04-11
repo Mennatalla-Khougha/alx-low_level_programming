@@ -38,7 +38,7 @@ int words(char *str)
 			i += len(str + i);
 		}
 	}
-	return (words);
+	return (word);
 /**
  * strtow - splits a string into words.
  * @str: string to be splited.
@@ -47,15 +47,15 @@ int words(char *str)
 
 char **strtow(char *str)
 {
-	int i, j, k = 0, words = 0, word_len = 0, x;
+	int i, j, k = 0, word = 0, word_len = 0, x;
 	char **string;
 
 	if (str == NULL)
 		return (NULL);
-	words = words(str);
-	if (words == 0)
+	word = words(str);
+	if (word == 0)
 		return (NULL);
-	string = malloc(sizeof(char *) * (words + 1));
+	string = malloc(sizeof(char *) * (word + 1));
 	if (string == NULL)
 	{
 		free(string);
