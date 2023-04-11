@@ -61,7 +61,7 @@ char **strtow(char *str)
 		free(string);
 		return (NULL);
 	}
-	for (i = 0; i < words; i++)
+	for (i = 0; i < word; i++)
 	{
 		while (str[k] == ' ')
 			k++;
