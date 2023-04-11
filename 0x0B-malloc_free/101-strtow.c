@@ -27,18 +27,18 @@ int len(char *str)
 
 char **strtow(char *str)
 {
-	unsigned long int j;
-	int i, k = 0, words = 0, word_len = 0;
+	unsigned long int q;
+	int i, j, k = 0, words = 0, word_len = 0;
 	char **string;
 
 	if (str == NULL)
 		return (NULL);
-	for (j = 0; j < strlen(str); j++)
+	for (q = 0; q < strlen(str); q++)
 	{
-		if (str[j] != '\t' && str[j] != ' ')
+		if (str[q] != '\t' && str[q] != ' ')
 		{
 			words++;
-			j += len(str + j);
+			q += len(str + q);
 		}
 	}
 	if (words == 0)
