@@ -20,6 +20,26 @@ int len(char *str)
 }
 
 /**
+ * words - gives the number of words in a string
+ * @str: string.
+ * Retun: number of words.
+ */
+
+int words(char *str)
+{
+	unsigned long int i;
+	int word;
+
+	for (i = 0; i < strlen(str); i++)
+	{
+		if(str[i] != ' ')
+		{
+			word++;
+			i += len(str + i);
+		}
+	}
+	return (words);
+/**
  * strtow - splits a string into words.
  * @str: string to be splited.
  * Return: pointer to an array of strings, or NULL.
@@ -27,20 +47,12 @@ int len(char *str)
 
 char **strtow(char *str)
 {
-	unsigned long int q;
-	int i, j, k = 0, words = 0, word_len = 0;
+	int i, j, k = 0, words = 0, word_len = 0, x;
 	char **string;
 
 	if (str == NULL)
 		return (NULL);
-	for (q = 0; q < strlen(str); q++)
-	{
-		if (str[q] != ' ')
-		{
-			words++;
-			q += len(str + q) + 1;
-		}
-	}
+	words = words(str);
 	if (words == 0)
 		return (NULL);
 	string = malloc(sizeof(char *) * (words + 1));
@@ -57,7 +69,10 @@ char **strtow(char *str)
 		string[i] = malloc(sizeof(char) * (word_len + 1));
 		if (string[i] == NULL)
 		{
-			free(string[i]);
+			for (x = 0; x <= i; x++)
+			{
+				free(string[x]);
+			}
 			free(string);
 			return (NULL);
 		}
