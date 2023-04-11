@@ -29,15 +29,15 @@ char *str_concat(char *s1, char *s2)
 	for (i = 0; i <= strlen(string); i++)
 	{
 		if (s1 == NULL)
-			str[i] = s2[i];
+			string[i] = s2[i];
 		else
 		{
-			str[i] = s1[i];
+			string[i] = s1[i];
 			if (s1[i] == '\0' && s2 != NULL)
 			{
 				for (j = 0; j < strlen(s2); j++)
 				{
-					str[i + j] = s2[j];
+					string[i + j] = s2[j];
 				}
 				break;
 			}
