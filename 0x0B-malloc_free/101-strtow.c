@@ -31,7 +31,7 @@ char **strtow(char *str)
 	int i, j, k = 0, words = 0, word_len = 0;
 	char **string;
 
-	if (str == NULL || str[0] = '\0')
+	if (str == NULL || str[0] == '\0')
 		return (NULL);
 	for (q = 0; q < strlen(str); q++)
 	{
