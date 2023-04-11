@@ -51,7 +51,7 @@ char **strtow(char *str)
 	}
 	for (i = 0; i < words; i++)
 	{
-		while (str[k] == '\t' || str[k] == ' ')
+		while (str[k] == ' ')
 			k++;
 		word_len = len(str + k);
 		string[i] = malloc(sizeof(char) * (word_len));
