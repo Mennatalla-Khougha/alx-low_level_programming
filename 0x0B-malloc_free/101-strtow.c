@@ -22,7 +22,7 @@ int len(char *str)
 /**
  * words - gives the number of words in a string
  * @str: string.
- * Retun: number of words.
+ * Return: number of words.
  */
 
 int words(char *str)
@@ -32,7 +32,7 @@ int words(char *str)
 
 	for (i = 0; i < strlen(str); i++)
 	{
-		if(str[i] != ' ')
+		if (str[i] != ' ')
 		{
 			word++;
 			i += len(str + i);
@@ -59,7 +59,6 @@ char **strtow(char *str)
 	string = malloc(sizeof(char *) * (word + 1));
 	if (string == NULL)
 	{
-		free(string);
 		return (NULL);
 	}
 	for (i = 0; i < word; i++)
