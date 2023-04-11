@@ -28,7 +28,7 @@ int len(char *str)
 char **strtow(char *str)
 {
 	unsigned long int q;
-	int i, j, k = 0, words = 0, word_len = 0;
+	int i, j, k = 0, words = 0, word_len = 0, x;
 	char **string;
 
 	if (str == NULL)
@@ -57,7 +57,8 @@ char **strtow(char *str)
 		string[i] = malloc(sizeof(char) * (word_len));
 		if (string[i] == NULL)
 		{
-			free(string[i]);
+			for (x = 0; x < i; x++)
+				free(string[x]);
 			free(string);
 			return (NULL);
 		}
