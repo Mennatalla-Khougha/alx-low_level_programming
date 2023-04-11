@@ -39,6 +39,7 @@ int words(char *str)
 		}
 	}
 	return (word);
+}
 /**
  * strtow - splits a string into words.
  * @str: string to be splited.
