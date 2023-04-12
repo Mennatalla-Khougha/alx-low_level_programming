@@ -32,7 +32,7 @@ int words(char *str)
 
 	for (i = 0; i < strlen(str); i++)
 	{
-		if (str[i] == '' && (i != 0 && str[i + 1] != '')
+		if (str[i] == ' ' && (i != 0 && str[i + 1] != ' ')
 		{
 			word++;
 			i += len(str + i);
