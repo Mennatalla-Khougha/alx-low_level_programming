@@ -38,6 +38,8 @@ int words(char *str)
 			i += len(str + i);
 		}
 	}
+	if (str[i - 1] != ' ' && word != 0)
+	       word++;	
 	return (word);
 }
 /**
