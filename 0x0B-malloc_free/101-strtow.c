@@ -38,8 +38,10 @@ int words(char *str)
 			i += len(str + i);
 		}
 	}
+	/**
 	if (str[i - 1] != ' ' && word != 0)
-	       word++;	
+	       word++;
+	       */
 	return (word);
 }
 /**
@@ -58,7 +60,7 @@ char **strtow(char *str)
 	word = words(str);
 	if (word == 0)
 		return (NULL);
-	string = malloc(sizeof(char *) * (word + 1));
+	string = malloc(sizeof(char *) * (word));
 	if (string == NULL)
 	{
 		return (NULL);
