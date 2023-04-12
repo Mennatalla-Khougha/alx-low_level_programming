@@ -12,7 +12,7 @@ int len(char *str)
 {
 	int i = 0;
 
-	while (str[i] != ' ' || str[i] != '\0')
+	while (str[i] != ' ' && str[i] != '\0')
 	{
 		i++;
 	}
@@ -35,7 +35,7 @@ int words(char *str)
 		if (str[i] == ' ' && (i != 0 && str[i - 1] != ' '))
 		{
 			word++;
-		/*	i += len(str + i);*/i
+		/*	i += len(str + i);*/
 		}
 	}
 	if (str[i - 1] != ' ' && word != 0)
