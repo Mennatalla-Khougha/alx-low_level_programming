@@ -71,10 +71,11 @@ char **strtow(char *str)
 		string[i] = malloc(sizeof(char) * (word_len));
 		if (string[i] == NULL)
 		{
+			/*
 			for (x = 0; x <= i; x++)
 			{
-				free(string[x]);
-			}
+			}*/
+			free(string[x]);
 			free(string);
 			return (NULL);
 		}
