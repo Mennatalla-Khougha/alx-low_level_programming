@@ -50,7 +50,7 @@ int words(char *str)
 
 char **strtow(char *str)
 {
-	int i, j, k = 0, word = 0, word_len = 0, x;
+	int i, j, k = 0, word = 0, word_len = 0;
 	char **string;
 
 	if (str == NULL)
@@ -75,7 +75,7 @@ char **strtow(char *str)
 			for (x = 0; x <= i; x++)
 			{
 			}*/
-			free(string[x]);
+			free(string[i]);
 			free(string);
 			return (NULL);
 		}
