@@ -28,7 +28,7 @@ int len(char *str)
 int words(char *str)
 {
 	unsigned long int i;
-	int word;
+	int word = 0;
 
 	for (i = 0; i < strlen(str); i++)
 	{
@@ -70,7 +70,7 @@ char **strtow(char *str)
 		while (str[k] == ' ')
 			k++;
 		word_len = len(str + k);
-		string[i] = malloc(sizeof(char) * (word_len + 1));
+		string[i] = malloc(sizeof(char) * (word_len));
 		if (string[i] == NULL)
 		{
 			for (x = 0; x <= i; x++)
