@@ -35,7 +35,6 @@ int words(char *str)
 		if (str[i] == ' ' && (i != 0 && str[i - 1] != ' '))
 		{
 			word++;
-		/*	i += len(str + i);*/
 		}
 	}
 	if (str[i - 1] != ' ' && word != 0)
