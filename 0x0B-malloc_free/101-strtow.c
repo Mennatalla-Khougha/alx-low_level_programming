@@ -68,10 +68,9 @@ char **strtow(char *str)
 		while (str[k] == ' ')
 			k++;
 		word_len = len(str + k);
-		string[i] = malloc(sizeof(char) * (word_len));
+		string[i] = malloc(sizeof(char) * (word_len + 1));
 		if (string[i] == NULL)
 		{
-			
 			for (x = 0; x <= i; x++)
 			{
 				free(string[i]);
