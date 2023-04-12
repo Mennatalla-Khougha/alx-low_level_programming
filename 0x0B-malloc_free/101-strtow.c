@@ -60,7 +60,7 @@ char **strtow(char *str)
 	word = words(str);
 	if (word == 0)
 		return (NULL);
-	string = malloc(sizeof(char *) * (word));
+	string = malloc(sizeof(char *) * (word + 1));
 	if (string == NULL)
 	{
 		return (NULL);
