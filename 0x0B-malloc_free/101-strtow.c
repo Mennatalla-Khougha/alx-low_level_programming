@@ -12,7 +12,7 @@ int len(char *str)
 {
 	int i = 0;
 
-	while (str[i] != ' ' && str[i] != '\t')
+	while (str[i] != ' ')
 	{
 		i++;
 	}
