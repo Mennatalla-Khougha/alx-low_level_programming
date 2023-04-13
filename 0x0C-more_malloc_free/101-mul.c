@@ -89,7 +89,6 @@ int main(int argc, char *argv[])
 {
 	unsigned long int result;
 	int first_check, second_check;
-	char *arg1, *arg2;
 
 	first_check = check_argc(argc);
 	if (first_check == 98)
@@ -98,8 +97,7 @@ int main(int argc, char *argv[])
 	if (second_check == 1)
 		exit(98);
 
-	result = strtol(argv[1], &arg1, 10) * strtol(argv[2], &arg2, 10);
-	/*result = atoi(argv[1]) * atoi(argv[2]);*/
+	result = atoi(argv[1]) * atoi(argv[2]);
 	print(result);
 	_putchar('\n');
 	return (0);
