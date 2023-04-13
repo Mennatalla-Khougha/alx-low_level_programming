@@ -30,7 +30,7 @@ int check_argc(int n)
  * Return: 0, 98.
  */
 
-/*int check_argv(char *argv[])
+int check_argv(char *argv[])
 {
 	unsigned long int i;
 
@@ -61,7 +61,7 @@ int check_argc(int n)
 		}
 	}
 	return (0);
-}*/
+}
 /**
  * print - print the result to the screen.
  * @result: int to be printed.
@@ -88,17 +88,17 @@ void print(unsigned long int result)
 int main(int argc, char *argv[])
 {
 	unsigned long int result;
-       	int first_check, second_check;
+	int first_check, second_check;
 	char *arg1, *arg2;
 
-	first_check = isdigit(argc);
-	if (first_check == 1)
+	first_check = check_argc(argc);
+	if (first_check == 98)
 		exit(98);
-	second_check = isdigit(argv);
+	second_check = check_argv(argv);
 	if (second_check == 1)
 		exit(98);
 
-	result = strtol(argv[1], &arg1, 10) * strtol(argv[2], & arg2, 10);
+	result = strtol(argv[1], &arg1, 10) * strtol(argv[2], &arg2, 10);
 	/*result = atoi(argv[1]) * atoi(argv[2]);*/
 	print(result);
 	_putchar('\n');
