@@ -93,10 +93,10 @@ int main(int argc, char *argv[])
 
 	first_check = check_argc(argc);
 	if (first_check == 98)
-		exit(98);
+		return(98);
 	second_check = check_argv(argv);
 	if (second_check == 98)
-		exit(98);
+		return(98);
 
 	/*result = atoi(argv[1]) * atoi(argv[2]);*/
 	n1 = atol(argv[1]);
