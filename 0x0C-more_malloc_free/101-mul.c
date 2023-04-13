@@ -68,9 +68,9 @@ int check_argv(char *argv[])
  * Return: nothing.
  */
 
-void print(unsigned long int result)
+void print(long int result)
 {
-	unsigned long int x = result;
+	long int x = result;
 
 	x /= 10;
 	if (x != 0)
@@ -87,10 +87,10 @@ void print(unsigned long int result)
 
 int main(int argc, char *argv[])
 {
-	/*unsigned long int result;*/
+	long int result;
 	int first_check, second_check;
-	long int n1, n2;
-	char *s1, *s2;
+	/*long int n1, n2;*/
+	/*char *s1, *s2;*/
 
 	first_check = check_argc(argc);
 	if (first_check == 98)
@@ -99,10 +99,11 @@ int main(int argc, char *argv[])
 	if (second_check == 98)
 		exit(98);
 
-	/*result = atol(argv[1]) * atol(argv[2]);*/
-	n1 = strtol(argv[1], &s1, 10);
-	n2 = strtol(argv[2], &s2, 10);
-	printf("%ld\n", n1 * n2);
-	/*_putchar('\n');*/
+	result = atol(argv[1]) * atol(argv[2]);
+	/*n1 = strtol(argv[1], &s1, 10);*/
+	/*n2 = strtol(argv[2], &s2, 10);*/
+	/*printf("%ld\n", n1 * n2);*/
+	print(result);
+	_putchar('\n');
 	return (0);
 }
