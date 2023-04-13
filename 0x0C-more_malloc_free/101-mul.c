@@ -70,11 +70,23 @@ int check_argv(char *argv[])
 
 void print(int *result, int len)
 {
-	int i; 
+	int i, j;
 
-	for (i = 0; i < len; i++)
+	for (j = 0; j < len; j++)
 	{
-			_putchar(result[i] + '0');
+		if (result[j] != 0)
+			break;
+	}
+	i = j;
+	while (1)
+	{
+		if (i == len)
+		{
+			_putchar('\n');
+			break;
+		}
+		_putchar(result[i] + '0');
+		i++;
 	}
 
 /*	x /= 10;
@@ -94,7 +106,7 @@ int main(int argc, char *argv[])
 {
 	int first_check, second_check, i, j, len;
 	int *array, digit1, digit2, carry;
-	char *s1, *s2;
+	char *v1, *v2;
 
 	first_check = check_argc(argc);
 	if (first_check == 98)
@@ -111,16 +123,16 @@ int main(int argc, char *argv[])
 	len = strlen(argv[1]) + strlen(argv[2]);
 	for (i = 0; i < len; i++)
 		array[i] = 0;
-	s1 = argv[1];
-       	s2 = argv[2];
+	v1 = argv[1];
+       	v2 = argv[2];
 	i = strlen(argv[1]) - 1;
        	j = strlen(argv[2]) - 1;
 	for (; i >= 0; i--)
 	{
-		digit1 = s1[i] + '0', carry = 0;
+		digit1 = v1[i] - '0', carry = 0;
 		for (; j >= 0; j--)
 		{
-			digit2 = s2[j] + '0';
+			digit2 = v2[j] - '0';
 			carry += array[i + j + 1] + (digit1 * digit2);
 			array[i + j + 1] = carry % 10;
 			carry /= 10;
@@ -133,7 +145,7 @@ int main(int argc, char *argv[])
 	/*n2 = strtol(argv[2], &s2, 10);*/
 	/*printf("%ld\n", n1 * n2);*/
 	print(array, len);
-	_putchar('\n');
+	/*_putchar('\n');*/
 	free(array);
 	return (0);
 }
