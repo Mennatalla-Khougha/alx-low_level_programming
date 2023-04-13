@@ -118,10 +118,10 @@ int main(int argc, char *argv[])
 	for (; i >= 0; i--)
 	{
 		digit1 = s1[i] + '0', carry = 0;
-		for (; j >= 0; j++)
+		for (; j >= 0; j--)
 		{
 			digit2 = s2[j] + '0';
-			carry += array[i + j + 1] + ((digit1 * digit2));
+			carry += array[i + j + 1] + (digit1 * digit2);
 			array[i + j + 1] = carry % 10;
 			carry /= 10;
 		}
