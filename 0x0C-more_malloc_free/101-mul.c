@@ -87,21 +87,21 @@ void print(unsigned long int result)
 
 int main(int argc, char *argv[])
 {
-	/*unsigned long int result;*/
+	unsigned long int result;
 	int first_check, second_check;
-	unsigned long n1, n2;
+	/*unsigned long n1, n2;*/
 
 	first_check = check_argc(argc);
 	if (first_check == 98)
-		return(98);
+		exit(98);
 	second_check = check_argv(argv);
 	if (second_check == 98)
-		return(98);
+		exit(98);
 
-	/*result = atoi(argv[1]) * atoi(argv[2]);*/
-	n1 = atol(argv[1]);
-	n2 = atol(argv[2]);
-	printf("%ld\n", n1 * n2);
+	result = atol(argv[1]) * atol(argv[2]);
+	/*n1 = atol(argv[1]);*/
+	/*n2 = atol(argv[2]);*/
+	printf("%ld\n", result);
 	/*_putchar('\n');*/
 	return (0);
 }
