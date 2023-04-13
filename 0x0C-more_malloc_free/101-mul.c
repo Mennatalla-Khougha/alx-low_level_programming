@@ -68,9 +68,9 @@ int check_argv(char *argv[])
  * Return: nothing.
  */
 
-void print(int result)
+void print(unsigned long int result)
 {
-	int x = result;
+	unsigned long int x = result;
 
 	x /= 10;
 	if (x != 0)
@@ -87,7 +87,9 @@ void print(int result)
 
 int main(int argc, char *argv[])
 {
-	int result, first_check, second_check;
+	unsigned long int result;
+       	int first_check, second_check;
+	char *arg1, *arg2;
 
 	first_check = check_argc(argc);
 	if (first_check == 98)
@@ -95,7 +97,9 @@ int main(int argc, char *argv[])
 	second_check = check_argv(argv);
 	if (second_check == 98)
 		exit(98);
-	result = atoi(argv[1]) * atoi(argv[2]);
+
+	result = strtol(argv[1], &arg1, 10) * strtol(argv[2], & arg2, 10);
+	/*result = atoi(argv[1]) * atoi(argv[2]);*/
 	print(result);
 	_putchar('\n');
 	return (0);
