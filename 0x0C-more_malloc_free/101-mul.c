@@ -87,8 +87,9 @@ void print(unsigned long int result)
 
 int main(int argc, char *argv[])
 {
-	unsigned long int result;
+	/*unsigned long int result;*/
 	int first_check, second_check;
+	unsigned long int n1, n2;
 
 	first_check = check_argc(argc);
 	if (first_check == 98)
@@ -97,8 +98,10 @@ int main(int argc, char *argv[])
 	if (second_check == 98)
 		exit(98);
 
-	result = atoi(argv[1]) * atoi(argv[2]);
-	print(result);
+	/*result = atoi(argv[1]) * atoi(argv[2]);*/
+	n1 = atoi(argv[1]);
+	n2 = atoi(argv[2]);
+	printf("%ld", n1 * n2);
 	_putchar('\n');
 	return (0);
 }
