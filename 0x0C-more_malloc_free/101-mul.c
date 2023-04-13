@@ -89,7 +89,7 @@ int main(int argc, char *argv[])
 {
 	/*unsigned long int result;*/
 	int first_check, second_check;
-	unsigned long n1, n2;
+	long int n1, n2;
 	char *s1, *s2;
 
 	first_check = check_argc(argc);
