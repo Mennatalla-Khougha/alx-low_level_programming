@@ -94,7 +94,7 @@ int main(int argc, char *argv[])
 	if (first_check == 98)
 		exit(98);
 	second_check = check_argv(argv);
-	if (second_check == 1)
+	if (second_check == 98)
 		exit(98);
 
 	result = atoi(argv[1]) * atoi(argv[2]);
