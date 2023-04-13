@@ -87,9 +87,10 @@ void print(unsigned long int result)
 
 int main(int argc, char *argv[])
 {
-	unsigned long int result;
+	/*unsigned long int result;*/
 	int first_check, second_check;
-	/*unsigned long n1, n2;*/
+	unsigned long n1, n2;
+	char *s1, *s2;
 
 	first_check = check_argc(argc);
 	if (first_check == 98)
@@ -98,10 +99,10 @@ int main(int argc, char *argv[])
 	if (second_check == 98)
 		exit(98);
 
-	result = atol(argv[1]) * atol(argv[2]);
-	/*n1 = atol(argv[1]);*/
-	/*n2 = atol(argv[2]);*/
-	printf("%ld\n", result);
+	/*result = atol(argv[1]) * atol(argv[2]);*/
+	n1 = strtol(argv[1], &s1, 10);
+	n2 = strtol(argv[2], &s2, 10);
+	printf("%ld\n", n1 * n2);
 	/*_putchar('\n');*/
 	return (0);
 }
