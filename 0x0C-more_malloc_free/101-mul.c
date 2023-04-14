@@ -89,9 +89,11 @@ int main(int argc, char *argv[])
 {
 	int first_check, second_check;
 	unsigned long int result;
-	/*long int first, second;
-	int digit1, digit2, carry;
-	char *v1, *v2, *array;*/
+	/*
+	 * long int first, second;
+	 * int digit1, digit2, carry;
+	 * char *v1, *v2, *array;
+	 */
 
 	first_check = check_argc(argc);
 	if (first_check == 98)
@@ -99,7 +101,7 @@ int main(int argc, char *argv[])
 	second_check = check_argv(argv);
 	if (second_check == 98)
 		exit(98);
-	
+
 	result = atol(argv[1]) * atol(argv[2]);
 	/*printf("%ld\n", n1 * n2);*/
 	print(result);
