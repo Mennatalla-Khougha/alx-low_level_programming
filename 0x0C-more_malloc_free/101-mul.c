@@ -68,31 +68,14 @@ int check_argv(char *argv[])
  * Return: nothing.
  */
 
-void print(int *result, int len)
+void print(unsigned long int result)
 {
-	int i, j;
+	unsigned long x = result;
 
-	for (j = 0; j < len; j++)
-	{
-		if (result[j] != 0)
-			break;
-	}
-	i = j;
-	while (1)
-	{
-		if (i == len)
-		{
-			_putchar('\n');
-			break;
-		}
-		_putchar(result[i] + '0');
-		i++;
-	}
-
-/*	x /= 10;
+	x /= 10;
 	if (x != 0)
 		print(x);
-	_putchar('0' + result % 10);*/
+	_putchar('0' + result % 10);
 }
 
 /**
@@ -104,9 +87,11 @@ void print(int *result, int len)
 
 int main(int argc, char *argv[])
 {
-	int first_check, second_check, i, j, len;
-	int *array, digit1, digit2, carry;
-	char *v1, *v2;
+	int first_check, second_check;
+	unsigned long int result;
+	/*long int first, second;
+	int digit1, digit2, carry;
+	char *v1, *v2, *array;*/
 
 	first_check = check_argc(argc);
 	if (first_check == 98)
@@ -114,38 +99,11 @@ int main(int argc, char *argv[])
 	second_check = check_argv(argv);
 	if (second_check == 98)
 		exit(98);
-	array = malloc(sizeof(int) * (strlen(argv[1]) + strlen(argv[2]) + 1));
-	if (array == NULL)
-	{
-		free(array);
-		return (1);
-	}
-	len = strlen(argv[1]) + strlen(argv[2]);
-	for (i = 0; i < len; i++)
-		array[i] = 0;
-	v1 = argv[1];
-       	v2 = argv[2];
-	i = strlen(argv[1]) - 1;
-       	j = strlen(argv[2]) - 1;
-	for (; i >= 0; i--)
-	{
-		digit1 = v1[i] - '0', carry = 0;
-		for (; j >= 0; j--)
-		{
-			digit2 = v2[j] - '0';
-			carry += array[i + j + 1] + (digit1 * digit2);
-			array[i + j + 1] = carry % 10;
-			carry /= 10;
-		}
-		if (carry > 0)
-			array[i + j + 1] += carry;
-	}
-	/*result = atol(argv[1]) * atol(argv[2]);*/
-	/*n1 = strtol(argv[1], &s1, 10);*/
-	/*n2 = strtol(argv[2], &s2, 10);*/
+	
+	result = atol(argv[1]) * atol(argv[2]);
 	/*printf("%ld\n", n1 * n2);*/
-	print(array, len);
-	/*_putchar('\n');*/
-	free(array);
+	print(result);
+	_putchar('\n');
+	/*free(array);*/
 	return (0);
 }
