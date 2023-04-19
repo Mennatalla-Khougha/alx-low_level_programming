@@ -1,3 +1,5 @@
+include "function_pointers.h"
+
 /**
  * print_name - print a name using function call.
  * @name: the name to be passed to the function.
