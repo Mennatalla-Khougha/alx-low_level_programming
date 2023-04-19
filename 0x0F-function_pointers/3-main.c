@@ -12,7 +12,7 @@
 
 int main(int argc, char **argv)
 {
-	int x, y;
+	int x, y, result;
 	char *s;
 
 	if (argc != 4)
@@ -32,12 +32,14 @@ int main(int argc, char **argv)
 		return (100);
 	}
 
-	if (strlen(s) != 1)
+	if (strlen(s) != 1 || get_op_func(s) == NULL)
 	{
 		printf("Error\n");
 		return (99);
 	}
 
-	printf("%i\n", get_op_func(s)(x, y));
+	result = get_op_func(s)(x, y);
+
+	printf("%i\n", result);
 	return (0);
 }
