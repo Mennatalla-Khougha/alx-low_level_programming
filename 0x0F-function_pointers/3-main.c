@@ -27,7 +27,7 @@ int main(int argc, char **argv)
 
 	s = argv[2];
 
-	if (strcmp(s, "/") == 0 && y == 0)
+	if ((strcmp(s, "/") == 0 && y == 0) || (strcmp(s, "%") == 0 && y == 0))
 	{
 		printf("Error\n");
 		return (-1);
