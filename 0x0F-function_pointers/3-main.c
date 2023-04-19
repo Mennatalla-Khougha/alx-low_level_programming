@@ -32,6 +32,12 @@ int main(int argc, char **argv)
 		return (-1);
 	}
 
+	if (strlen(s) != 1)
+	{
+		printf("Error\n");
+		return (-1);
+	}
+
 	result = get_op_func(s)(x, y);
 
 	printf("%d\n", result);
