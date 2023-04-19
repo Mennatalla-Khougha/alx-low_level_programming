@@ -13,7 +13,6 @@
 int main(int argc, char **argv)
 {
 	int x, y;
-	int (*result)(int, int);
 	char *s;
 
 	if (argc != 4)
@@ -27,20 +26,18 @@ int main(int argc, char **argv)
 
 	s = argv[2];
 
-	if ((strcmp(s, "/") == 0 && y == 0) || (strcmp(s, "%") == 0 && y == 0))
+	if ((strcmp(s, "/") == 0 || strcmp(s, "%") == 0) && y == 0)
 	{
 		printf("Error\n");
 		return (-1);
 	}
 
-	if (strlen(s) != 1)
+	if (strlen(s) != 1 || get_op_func(s) == NULL)
 	{
 		printf("Error\n");
 		return (-1);
 	}
 
-	result = get_op_func(s);
-
-	printf("%i\n", result(x, y));
+	printf("%i\n", get_op_func(s)(x, y));
 	return (0);
 }
