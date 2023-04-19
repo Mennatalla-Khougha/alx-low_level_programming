@@ -32,7 +32,7 @@ int main(int argc, char **argv)
 		print = *(unsigned char *)opcode;
 		printf("%.2x", print);
 
-		if(i == x -1)
+		if (i == x -1)
 			break;
 
 		printf(" ");
