@@ -29,7 +29,7 @@ int main(int argc, char **argv)
 
 	for (i = 0; i < x; i++)
 	{
-		print = *opcode;
+		print = *(unsigned char *)opcode;
 		printf("%.2x", print);
 		printf(" ");
 		print++;
