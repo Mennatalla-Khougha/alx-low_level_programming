@@ -7,7 +7,7 @@ include "function_pointers.h"
  * Return: nothing.
  */
 
-void print_name(char *name, void (*f)(char *))t main(void)
+void print_name(char *name, void (*f)(char *))
 {
 	f(name);
 }
