@@ -31,10 +31,8 @@ int main(int argc, char **argv)
 	{
 		print = *(unsigned char *)opcode;
 		printf("%.2x", print);
-		if (i == x - 1)
-			continue;
 		printf(" ");
-		print++;
+		opcode++;
 	}
 	printf("\n");
 	return (0);
