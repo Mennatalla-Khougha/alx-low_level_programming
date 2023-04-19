@@ -40,6 +40,6 @@ int main(int argc, char **argv)
 
 	result = get_op_func(s)(x, y);
 
-	printf("%u\n", result);
+	printf("%i\n", result);
 	return (0);
 }
