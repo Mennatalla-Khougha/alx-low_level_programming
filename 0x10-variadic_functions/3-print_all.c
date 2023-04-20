@@ -14,24 +14,30 @@ void print_all(const char * const format, ...)
 	va_list args;
 	char *s;
 	char *str;
+	char *sep = "";
 
 	str = malloc(strlen(format) + 1);
 	strcpy(str, format);
 	va_start(args, format);
 	while (str && *str)
 	{
+		sep = "";
 		switch (*str)
 		{
 			case('c'):
+				sep = ", ";
 				printf("%c", va_arg(args, int));
 				break;
 			case('i'):
+				sep = ", ";
 				printf("%d", va_arg(args, int));
 				break;
 			case('f'):
+				sep = ", ";
 				printf("%f", va_arg(args, double));
 				break;
 			case('s'):
+				sep = ", ";
 				s = va_arg(args, char *);
 				if (s == NULL)
 				{
@@ -43,7 +49,7 @@ void print_all(const char * const format, ...)
 		}
 		str++;
 		if (*str)
-			printf(", ");
+			printf("%s", sep);
 		}
 	printf("\n");
 	va_end(args);
