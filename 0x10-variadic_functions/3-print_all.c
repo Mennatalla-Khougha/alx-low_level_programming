@@ -12,9 +12,7 @@
 void print_all(const char * const format, ...)
 {
 	va_list args;
-	char *s;
-	char *str;
-	char *sep = "";
+	char *s, *str, *sep = "";
 
 	str = malloc(strlen(format) + 1);
 	strcpy(str, format);
@@ -40,10 +38,7 @@ void print_all(const char * const format, ...)
 				sep = ", ";
 				s = va_arg(args, char *);
 				if (s == NULL)
-				{
-					printf("(nil)");
-					break;
-				}
+					s = "(nil)";
 				printf("%s", s);
 				break;
 		}
