@@ -21,27 +21,30 @@ void print_all(const char * const format, ...)
 	va_start(args, format);
 	while (str != NULL)
 	{
-		if (strchr(list, *str) == NULL)
+		switch (*str)
 		{
-			str++;
-			continue;
-		}
-		else if (strchr(list, *str) != NULL && *str == 'c')
-			printf("%c", va_arg(args, int));
-		else if (strchr(list, *str) != NULL && *str == 'i')
-			printf("%d", va_arg(args, int));
-		else if (strchr(list, *str) != NULL && *str == 'f')
-			printf("%f", va_arg(args, double));
-		else if (strchr(list, *str) != NULL && *str == 's' && 
-			va_arg(args, char*) != NULL)
-		{
-			s = va_arg(args, char *);
-			printf("%s", s);
+			case('c'):
+				printf("%c, ", va_arg(args, int));
+				break;
+			case('i'):
+				printf("%d, ", va_arg(args, int));
+				break;
+			case('f'):
+				printf("%f, ", va_arg(args, double));
+				break;
+			case('s'):
+				s = va_arg(args, char *);
+				if (s == NULL)
+				{
+					printf("(nil), ");
+					break;
+				}
+				printf("%s, ", s);
+				break;
 		}
 		str++;
 		if (*str == '\0')
 			break;
-		printf(", ");
 	}
 	printf("\n");
 	va_end(args);
