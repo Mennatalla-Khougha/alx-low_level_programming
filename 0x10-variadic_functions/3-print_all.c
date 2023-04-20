@@ -11,7 +11,6 @@
 
 void print_all(const char * const format, ...)
 {
-	char *list = "cifs";
 	va_list args;
 	char *s;
 	char *str;
