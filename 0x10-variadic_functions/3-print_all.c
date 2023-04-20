@@ -11,16 +11,15 @@
 
 void print_all(const char * const format, ...)
 {
+	int i = 0;
 	va_list args;
-	char *s, *str, *sep = "";
+	char *s, *sep = "";
 
-	str = malloc(strlen(format) + 1);
-	strcpy(str, format);
 	va_start(args, format);
-	while (str && *str)
+	while (format && format[i])
 	{
 		sep = "";
-		switch (*str)
+		switch (format[i])
 		{
 			case('c'):
 				sep = ", ";
@@ -42,11 +41,10 @@ void print_all(const char * const format, ...)
 				printf("%s", s);
 				break;
 		}
-		str++;
-		if (*str)
+		i++;
+		if (format[i])
 			printf("%s", sep);
 	}
 	printf("\n");
 	va_end(args);
-	free(str);
 }
