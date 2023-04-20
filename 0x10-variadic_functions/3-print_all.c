@@ -18,34 +18,35 @@ void print_all(const char * const format, ...)
 	str = malloc(strlen(format) + 1);
 	strcpy(str, format);
 	va_start(args, format);
-	if (str)
-	{
-		while (*str)
+	while (str && *str)
 		{
 			switch (*str)
 			{
 				case('c'):
-					printf("%c, ", va_arg(args, int));
+					printf("%c", va_arg(args, int));
 					break;
 				case('i'):
-					printf("%d, ", va_arg(args, int));
+					printf("%d", va_arg(args, int));
 					break;
 				case('f'):
-					printf("%f, ", va_arg(args, double));
+					printf("%f", va_arg(args, double));
 					break;
 				case('s'):
 					s = va_arg(args, char *);
 					if (s == NULL)
 					{
-						printf("(nil), ");
+						printf("(nil)");
 						break;
 					}
-					printf("%s, ", s);
+					printf("%s", s);
 					break;
 				default:
 					break;
 			}
 			str++;
+			if (str == NULL)
+				break;
+			printf(", ");
 		}
 	}
 	printf("\n");
