@@ -3,7 +3,7 @@
 
 /**
  * print_numbers - print_numbers
- * @seperator: string printed between numbers.
+ * @separator: string printed between numbers.
  * @n: number of args.
  * Return: nothing.
  */
