@@ -32,7 +32,8 @@ void print_all(const char * const format, ...)
 			printf("%d", va_arg(args, int));
 		else if (strchr(list, *str) != NULL && *str == 'f')
 			printf("%f", va_arg(args, double));
-		else if (strchr(list, *str) != NULL && *str == 's')
+		else if (strchr(list, *str) != NULL && *str == 's' && 
+			va_arg(args, char*) != NULL)
 		{
 			s = va_arg(args, char *);
 			printf("%s", s);
