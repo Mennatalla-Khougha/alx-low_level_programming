@@ -43,7 +43,9 @@ void print_all(const char * const format, ...)
 			}
 			str++;
 			if (str == NULL)
+			{
 				break;
+			}
 			printf(", ");
 		}
 	printf("\n");
