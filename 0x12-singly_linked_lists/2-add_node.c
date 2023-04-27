@@ -25,7 +25,10 @@ list_t *add_node(list_t **head, const char *str)
 
 	node->str = node_str;
 	node->len = len;
-	node->next = *head;
+	if (*head == NULL)
+		node->next = *head;
+	else
+		node->next = *head;
 
 	*head = node;
 	return (node);
