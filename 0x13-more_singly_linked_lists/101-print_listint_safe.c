@@ -16,7 +16,7 @@ size_t print_listint_safe(const listint_t *head)
 	while (head)
 	{
 		node = head;
-		head = node->next;
+		head = head->next;
 		i++;
 		printf("[%p] %d\n", (void *)node, node->n);
 		if (node < head)
