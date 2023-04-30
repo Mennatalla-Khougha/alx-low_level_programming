@@ -12,7 +12,7 @@ size_t print_listint_safe(const listint_t *head)
 	long int num;
 	const listint_t *node;
 
-	if (head == NULL)
+	if (head == NULL || head->next == NULL)
 		exit(98);
 	while (head)
 	{
