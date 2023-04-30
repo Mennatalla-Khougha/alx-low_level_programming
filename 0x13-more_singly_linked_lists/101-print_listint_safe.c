@@ -6,7 +6,7 @@
  * Return: number of elements of the lists.
  */
 
-size_t print_listint_safe(const listint *head)
+size_t print_listint_safe(const listint_t *head)
 {
 	const listint_t *node;
 	size_t i = 0;
