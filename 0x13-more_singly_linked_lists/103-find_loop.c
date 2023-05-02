@@ -27,7 +27,7 @@ listint_t *find_listint_loop(listint_t *head)
 			return (ptr_s);
 		}
 		ptr_s = ptr_s->next;
-		ptr_f = ptr_f->next;
+		ptr_f = ptr_f->next->next;
 	}
 	return (NULL);
 }
