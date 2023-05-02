@@ -53,8 +53,6 @@ size_t print_listint_safe(const listint_t *head)
 	const listint_t *node, *ptr;
 	size_t i = 0,  j = 0;
 
-	if (head == NULL || head->next == NULL)
-		return (98);
 	node = head;
 	while (node)
 	{
