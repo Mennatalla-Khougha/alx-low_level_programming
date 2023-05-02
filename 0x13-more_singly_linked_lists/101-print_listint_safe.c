@@ -53,6 +53,9 @@ size_t print_listint_safe(const listint_t *head)
 	const listint_t *node = head, *ptr;
 	size_t i = 0,  j = 0;
 
+	if (head == NULL)
+		return (98);
+
 	while (node)
 	{
 		printf("[%p] %d\n", (void *)node, node->n);
@@ -69,32 +72,7 @@ size_t print_listint_safe(const listint_t *head)
 			j++;
 			ptr = ptr->next;
 		}
+		j = 0;
 	}
 	return (i);
 }
-/*{
-	size_t i = 0, loops;
-
-	loops = floyd_loop(head);
-	if (loops == 0)
-	{
-		while (head)
-		{
-			printf("[%p] %d\n", (void *)head, head->n);
-			loops++;
-			head = head->next;
-		}
-	}
-	else
-	{
-		while (i < loops)
-		{
-			printf("[%p] %d\n", (void *)head, head->n);
-			head = head->next;
-			i++;
-		}
-
-		printf("->[%p] %d\n", (void *)head, head->n);
-	}
-	return (loops);
-}*/
