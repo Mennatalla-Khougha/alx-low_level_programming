@@ -52,8 +52,6 @@ size_t print_listint_safe(const listint_t *head)
 {
 	size_t i = 0, loops;
 
-	if (head == NULL)
-		return (0);
 	loops = floyd_loop(head);
 	if (loops == 0)
 	{
