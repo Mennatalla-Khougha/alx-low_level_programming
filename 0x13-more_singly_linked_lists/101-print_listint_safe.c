@@ -14,7 +14,7 @@ size_t floyd_loop(const listint_t *head)
 	if (head == NULL || head->next == NULL)
 		return (0);
 	ptr_s = ptr_s->next;
-	ptr_f = ptr_s->next;
+	ptr_f = ptr_f->next->next;
 	i = 1;
 	while (ptr_f)
 	{
@@ -53,9 +53,6 @@ size_t print_listint_safe(const listint_t *head)
 	size_t i = 0, loops;
 
 	loops = floyd_loop(head);
-	if (head == NULL || head->next == NULL)
-		exit(98);
-
 	if (loops == 0)
 	{
 		while (head)
