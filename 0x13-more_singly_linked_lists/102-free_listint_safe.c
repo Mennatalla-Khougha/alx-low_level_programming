@@ -9,12 +9,12 @@
 size_t free_listint_safe(listint_t **h)
 {
 	listint_t *head = *h, *node;
-	size_t i = 0, loops;
+	size_t i = 0, loops = 0;
 
 	if (h == NULL || *h == NULL)
 		return (0);
 
-	loops = floyd_loop(*h);
+	loops = floyd_loop(head);
 	while (head)
 	{
 		if (loops == 0)
