@@ -9,13 +9,12 @@
 size_t floyd_loop(const listint_t *head)
 {
 	const listint_t *ptr_s, *ptr_f;
-	size_t i;
+	size_t i = 0;
 
 	if (head == NULL || head->next == NULL)
 		return (0);
 	ptr_s = head->next;
 	ptr_f = head->next->next;
-	i = 1;
 	while (ptr_f)
 	{
 		if (ptr_s == ptr_f)
@@ -75,5 +74,5 @@ size_t print_listint_safe(const listint_t *head)
 
 		printf("->[%p] %d\n", (void *)head, head->n);
 	}
-	return (loops);
+	return(loops);
 }
