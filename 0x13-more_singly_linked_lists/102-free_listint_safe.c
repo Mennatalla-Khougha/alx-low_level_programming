@@ -8,26 +8,26 @@
 
 size_t free_listint_safe(listint_t **h)
 {
-	listint_t *node = *h;
+	listint_t *head = *h, *node;
 	size_t i = 0, loops;
 
 	if (h == NULL || *h == NULL)
 		return (0);
 
 	loops = floyd_loop(*h);
-	while (*h)
+	while (head)
 	{
 		if (loops == 0)
 		{
-			node = *h;
-			(*h)->next = NULL;
+			node = head;
+			head->next = NULL;
 			free(node);
 			break;
 		}
 		loops--;
 		i++;
-		node = *h;
-		*h = node->next;
+		node = head;
+		head = head->next;
 		free(node);
 	}
 	*h = NULL;
