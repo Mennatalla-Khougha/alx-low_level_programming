@@ -2,7 +2,7 @@
 
 /**
  * free_listint_safe - free a list containing aloop.
- * @head: pointer to the start of the list.
+ * @h: pointer to the start of the list.
  * Return: number of nodes freed.
  */
 
