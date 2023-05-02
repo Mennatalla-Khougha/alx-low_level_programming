@@ -8,83 +8,25 @@
 
 size_t free_listint_safe(listint_t **h)
 {
-	listint_t *current = *h, *next;
-	int diff, count = 0;
+	size_t i = 0;
+	listint_t *node;
 
-	if (h == NULL || *h == NULL)
-		return (count);
-
-	while (current)
-	{
-		diff = current - current->next;
-		if (diff > 0)
-		{
-			next = current->next;
-			free(current);
-			current = next;
-			count++;
-		} else
-		{
-			free(current);
-			*h = NULL;
-			count++;
-			break;
-		}
-
-	}
-	*h = NULL;
-	return (count);
-}
-/* {
-	listint_t *head = *h, *node;
-	size_t i = 0, loops = 0;
-
-	if (h == NULL || *h == NULL)
+	if (*h == NULL)
 		return (0);
-
-	loops = floyd_loop(head);
-	while (head)
+	while (*h)
 	{
-		if (loops == 0)
+		if (*h - (*h)->next != 0)
 		{
-			node = head;
-			head->next = NULL;
-			free(node);
+			node = *h;
+			free(*h);
+			i++;
 			break;
 		}
-		loops--;
-		i++;
-		node = head;
-		head = head->next;
+		node = *h;
+		*h = (*h)->next;
 		free(node);
+		i++;
 	}
 	*h = NULL;
 	return (i);
-}*/
-
-
-
-/*	if (loops == 0)
-	{
-		while (h != NULL && *h != NULL)
-		{
-			node = (*h)->next;
-			free(*h);
-			*h = node;
-			loops++;
-		}
-	}
-	else
-	{
-		while (i < loops)
-		{
-			node = (*h)->next;
-			free(*h);
-			*h = node;
-			i++;
-		}
-		*h = NULL;
-	}
-	h = NULL;
-	return (loops);
-}*/
+}
