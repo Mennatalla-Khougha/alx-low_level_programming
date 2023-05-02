@@ -20,9 +20,9 @@ size_t free_listint_safe(listint_t **h)
 		if (loops == 0)
 		{
 			node = *h;
-			*h->next = NULL;
+			(*h)->next = NULL;
 			free(node);
-			break
+			break;
 		}
 		loops--;
 		i++;
