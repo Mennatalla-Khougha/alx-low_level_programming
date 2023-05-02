@@ -14,7 +14,7 @@ size_t free_listint_safe(listint_t **h)
 	loops = floyd_loop(*h);
 	if (loops == 0)
 	{
-		while (h & *h)
+		while (h && *h)
 		{
 			node = (*h)->next;
 			free(*h);
