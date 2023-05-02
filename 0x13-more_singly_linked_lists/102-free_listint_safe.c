@@ -8,6 +8,34 @@
 
 size_t free_listint_safe(listint_t **h)
 {
+	listint_t *current = *h, *next;
+	int diff, count = 0;
+
+	if (h == NULL || *h == NULL)
+		return (count);
+
+	while (current)
+	{
+		diff = current - current->next;
+		if (diff > 0)
+		{
+			next = current->next;
+			free(current);
+			current = next;
+			count++;
+		} else
+		{
+			free(current);
+			*h = NULL;
+			count++;
+			break;
+		}
+
+	}
+	*h = NULL;
+	return (count);
+}
+/* {
 	listint_t *head = *h, *node;
 	size_t i = 0, loops = 0;
 
@@ -32,7 +60,7 @@ size_t free_listint_safe(listint_t **h)
 	}
 	*h = NULL;
 	return (i);
-}
+}*/
 
 
 
