@@ -50,12 +50,12 @@ size_t floyd_loop(const listint_t *head)
 
 size_t print_listint_safe(const listint_t *head)
 {
-	const listint_t *node = head, *ptr;
+	const listint_t *node, *ptr;
 	size_t i = 0,  j = 0;
 
 	if (head == NULL || head->next == NULL)
 		return (98);
-
+	node = head;
 	while (node)
 	{
 		printf("[%p] %d\n", (void *)node, node->n);
