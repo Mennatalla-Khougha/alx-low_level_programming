@@ -61,6 +61,13 @@ int main(int argc, char **argv)
 		free(buffer);
 		exit(99);
 	}
+	n_read = read(file_f, buffer, 1024);
+	if (n_read == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
+		free(buffer);
+		exit(98);
+	}
 	while ((n_read = read(file_f, buffer, 1024)) > 0)
 	{
 		n_write = write(file_2, buffer, n_read);
