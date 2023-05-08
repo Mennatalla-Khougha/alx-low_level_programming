@@ -76,8 +76,8 @@ int main(int argc, char **argv)
 		free(buffer);
 		exit(99);
 	}
-	while ((n_read = read(file_f, buffer, 1024)) > 0)
-	{
+	n_read = read(file_f, buffer, 1024);
+	do {
 		if (n_read == -1 || file_f == -1)
 		{
 			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
@@ -91,7 +91,7 @@ int main(int argc, char **argv)
 			free(buffer);
 			exit(99);
 		}
-	}
+	} while (n_read > 0);
 	close_file(file_f);
 	close_file(file_2);
 	free(buffer);
