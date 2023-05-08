@@ -14,6 +14,26 @@ void check_input(int argc)
 }
 
 /**
+ * create_buffer -  create a buffer.
+ * @file: The name of file the buffer in used at..
+ * Return: A pointer to the buffer.
+ */
+
+char *create_buffer(char *file)
+{
+	char *buffer;
+
+	buffer = malloc(sizeof(char) * 1024);
+
+	if (buffer == NULL)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", file);
+		exit(99);
+	}
+	return (buffer);
+}
+
+/**
  * close_file - close the file.
  * @file: file to be closed.
  */
@@ -40,22 +60,15 @@ int main(int argc, char **argv)
 	ssize_t n_read, n_write;
 	char *buffer;
 
-	TDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
-			free(buffer);
-					exit(98);i
-	buffer = malloc(1024);
-	if (buffer == NULL)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
-		exit(99);
-	}
+	check_input(argc);
+	buffer = create_buffer(argv[2]);
 	file_f = open(argv[1], O_RDONLY);
-	if (file_f == -1)
+/*	if (file_f == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
 		free(buffer);
 		exit(98);
-	}
+	}*/
 	file_2 = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
 	if (file_2 == -1)
 	{
@@ -65,7 +78,7 @@ int main(int argc, char **argv)
 	}
 	while ((n_read = read(file_f, buffer, 1024)) > 0)
 	{
-		if (n_read == -1)
+		if (n_read == -1 || file_f == -1)
 		{
 			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
 			free(buffer);
