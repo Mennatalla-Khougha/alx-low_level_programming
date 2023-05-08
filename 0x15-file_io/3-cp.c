@@ -23,7 +23,7 @@ char *create_buffer(char *file)
 {
 	char *buffer;
 
-	buffer = malloc(sizeof(char) * 1024);
+	buffer = malloc(1024);
 
 	if (buffer == NULL)
 	{
@@ -63,7 +63,7 @@ int main(int argc, char **argv)
 	check_input(argc);
 	buffer = create_buffer(argv[2]);
 	file_f = open(argv[1], O_RDONLY);
-/*	if (file_f == -1)
+	/*if (file_f == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
 		free(buffer);
@@ -85,12 +85,14 @@ int main(int argc, char **argv)
 			exit(98);
 		}
 		n_write = write(file_2, buffer, n_read);
-		if (n_write != n_read || n_write == -1)
+		if (n_write != n_read || n_write == -1 || file_2 == -1)
 		{
 			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
 			free(buffer);
 			exit(99);
 		}
+		n_read = read(file_f, buffer, 1024);
+		file_2 = open(argv[2], O_WRONLY | O_APPEND);
 	} while (n_read > 0);
 	close_file(file_f);
 	close_file(file_2);
