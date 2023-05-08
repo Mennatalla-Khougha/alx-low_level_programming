@@ -40,7 +40,9 @@ int main(int argc, char **argv)
 	ssize_t n_read, n_write;
 	char *buffer;
 
-	check_input(argc);
+	TDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
+			free(buffer);
+					exit(98);i
 	buffer = malloc(1024);
 	if (buffer == NULL)
 	{
@@ -61,15 +63,14 @@ int main(int argc, char **argv)
 		free(buffer);
 		exit(99);
 	}
-	n_read = read(file_f, buffer, 1024);
-	if (n_read == -1)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
-		free(buffer);
-		exit(98);
-	}
 	while ((n_read = read(file_f, buffer, 1024)) > 0)
 	{
+		if (n_read == -1)
+		{
+			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
+			free(buffer);
+			exit(98);
+		}
 		n_write = write(file_2, buffer, n_read);
 		if (n_write != n_read || n_write == -1)
 		{
