@@ -15,6 +15,19 @@ void close_file(int file)
 }
 
 /**
+ * check_input - check the number of inputs.
+ * @argc: number
+ */
+void check_input(int argc)
+{
+	if (argc != 3)
+	{
+		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
+		exit(97);
+	}
+}
+
+/**
  * main - copies the content of a file to another file.
  * @argc: number of argument.
  * @argv: array of array of argument.
@@ -27,15 +40,11 @@ int main(int argc, char **argv)
 	ssize_t n_read, n_write;
 	char *buffer;
 
-	if (argc != 3)
-	{
-		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
-		exit(97);
-	}
+	check_input(argc);
 	buffer = malloc(1024);
 	if (buffer == NULL)
 	{
-		dprintf(STDERR_FILENO,"Error: Can't write to %s\n", argv[2]);
+		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
 		exit(99);
 	}
 	file_f = open(argv[1], O_RDONLY);
@@ -47,12 +56,6 @@ int main(int argc, char **argv)
 		exit(98);
 	}
 	file_2 = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
-	if (file_2 == -1)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
-		free(buffer);
-		exit(99);
-	}
 	while (n_read > 0)
 	{
 		n_write = write(file_2, buffer, n_read);
