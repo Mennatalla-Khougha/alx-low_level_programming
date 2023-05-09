@@ -40,7 +40,7 @@ void check_magic(unsigned char *header)
 	if (header[EI_MAG0] != ELFMAG0 ||
 	header[EI_MAG1] != ELFMAG1 ||
 	header[EI_MAG2] != ELFMAG2 ||
-	header[EI_MAG3] != ELFMAG3) 
+	header[EI_MAG3] != ELFMAG3)
 	{
 		dprintf(STDERR_FILENO, "Error: Not an ELF file\n");
 		exit(98);
@@ -99,7 +99,7 @@ int main(int argc, char **argv)
 		exit(98);
 	}
 	n_read = read(file, &buffer, sizeof(buffer));
-	if (n_read < 0 || n_read != sizeof(buffer)) 
+	if (n_read < 0 || n_read != sizeof(buffer))
 	{
 		free(buffer);
 		close_file(file);
