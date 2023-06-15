@@ -9,7 +9,7 @@
 
 dlistint_t *add_dnodeint_end(dlistint_t **head, const int n)
 {
-	dlistint_t *newNode = create_node(n);
+	dlistint_t *newNode = create_node_new(n);
 
 	if (newNode == NULL)
 		return (NULL);
@@ -28,12 +28,12 @@ dlistint_t *add_dnodeint_end(dlistint_t **head, const int n)
 }
 
 /**
- * create_node - create an new node
+ * create_node_new - create an new node
  * @data: the element of the node
  * Return: a new node
  */
 
-dlistint_t *create_node(int data)
+dlistint_t *create_node_new(int data)
 {
 	dlistint_t *node = malloc(sizeof(dlistint_t));
 
