@@ -10,4 +10,5 @@ for i in range(100, 1000):
             product = i * j;
             if is_palindrome(product) and product > result:
                 result = product
-print(f"{result}")
+with open("102-result", "w") as file:
+    file.write("{}".format(result))
