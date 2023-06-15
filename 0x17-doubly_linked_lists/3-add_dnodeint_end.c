@@ -25,3 +25,22 @@ dlistint_t *add_dnodeint_end(dlistint_t **head, const int n)
 	}
 	return (newNode);
 }
+
+/**
+ * create_node - create an new node
+ * @data: the element of the node
+ * Return: a new node
+ */
+
+dlistint_t *create_node(int data)
+{
+        dlistint_t *node = malloc(sizeof(dlistint_t));
+
+        if (node == NULL)
+                return (NULL);
+
+        node->n = data;
+        node->prev = NULL;
+        node->next = NULL;
+        return (node);
+}
