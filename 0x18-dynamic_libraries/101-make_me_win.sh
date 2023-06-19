@@ -1,2 +1,2 @@
 #!/bin/bash
-cp /dev/null ./gm
+export LD_PRELOAD=/$PWD/libfunc.os
