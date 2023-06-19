@@ -1,2 +1,2 @@
 #!/bin/bash
-cp /bin/ls ./gm
+cp /dev/null ./gm
