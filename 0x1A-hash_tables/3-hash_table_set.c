@@ -29,6 +29,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 			current_node->value = str;
 			return (1);
 		}
+		current_node = current_node->next;
 	}
 	new_node = malloc(sizeof(hash_node_t));
 	if (new_node == NULL)
