@@ -75,6 +75,20 @@ int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 	new_node->value = str;
 	new_node->next = ht->array[index];
 	ht->array[index] = new_node;
+	sort_list(ht, new_node, key);
+	return (1);
+}
+
+/**
+ * sort_list - sort the list by key
+ * @ht: the hash table
+ * @key: the key
+ * @new_node: the new node to be inserted
+*/
+void sort_list(shash_table_t *ht, shash_node_t *new_node, const char *key)
+{
+	shash_node_t *current_node;
+
 	if (ht->shead == NULL)
 	{
 		new_node->snext = NULL;
@@ -102,7 +116,6 @@ int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 			current_node->snext->sprev = new_node;
 		current_node->snext = new_node;
 	}
-	return (1);
 }
 
 /**
