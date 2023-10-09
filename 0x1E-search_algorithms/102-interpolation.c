@@ -1,6 +1,5 @@
 #include <stddef.h>
 #include <stdio.h>
-#include <math.h>
 
 /**
  * interpolation_search - searches for a value in an array of integers
@@ -12,15 +11,15 @@
 int interpolation_search(int *array, size_t size, int value)
 {
 	int low = 0, high = size - 1;
-	size_t pos, div;
+	size_t pos;
 
 	if (array == NULL || size == 0)
 		return (-1);
 	while (low <= high)
 	{
-		div = ((double)(high - low) / (array[high] - array[low]));
-		pos = low + (div * (value - array[low]));
-		if (pos > size - 1)
+		pos = low + (((double)(high - low) /
+			(array[high] - array[low])) * (value - array[low]));
+		if ((int)pos > high)
 		{
 			printf("Value checked array[%ld] is out of range\n", pos);
 			return (-1);
