@@ -23,6 +23,8 @@ listint_t *jump_list(listint_t *list, size_t size, int value)
 	{
 		while ((int)tmp->index != i)
 			tmp = tmp->next;
+		if (tmp->index + 1 == size)
+			break;
 		printf("Value checked at index [%d] = [%d]\n", i, tmp->n);
 		if (value <= tmp->n)
 			break;
