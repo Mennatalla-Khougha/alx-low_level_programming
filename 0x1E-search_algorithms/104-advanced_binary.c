@@ -30,6 +30,9 @@ int binary(int *array, int left, int right, int value)
 {
 	int mid = (left + right) / 2;
 
+	if (!array)
+		return (-1);
+
 	if (left <= right)
 	{
 		print_array((array + left), (right - left) + 1);
