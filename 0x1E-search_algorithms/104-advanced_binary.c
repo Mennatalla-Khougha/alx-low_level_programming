@@ -30,17 +30,16 @@ int binary(int *array, int left, int right, int value)
 {
 	int mid = (left + right) / 2;
 
-	if (!array)
+	if (array == NULL)
 		return (-1);
 
-	if (left <= right)
+	print_array((array + left), (right - left) + 1);
+
+	if (value == array[left])
+		return (mid);
+	if (array[left] != array[right])
 	{
-		print_array((array + left), (right - left) + 1);
-		if (value == array[mid] && value == array[mid - 1])
-			return (binary(array, left, mid, value));
-		else if (value == array[mid])
-			return (mid);
-		else if (value < array[mid])
+		if (value <= array[mid])
 			return (binary(array, left, mid - 1, value));
 		else if (value > array[mid])
 			return (binary(array, mid + 1, right, value));
