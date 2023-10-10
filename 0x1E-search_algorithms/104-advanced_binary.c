@@ -34,7 +34,7 @@ int binary(int *array, int left, int right, int value)
 		return (-1);
 	print_array((array + left), (right - left) + 1);
 	mid = (left + right) / 2;
-	if (value == array[mid] && (mid == left || value != array[mid - 1]))
+	if (value == array[mid] && (mid == left))
 		return (mid);
 	else if (value <= array[mid])
 		return (binary(array, left, mid, value));
