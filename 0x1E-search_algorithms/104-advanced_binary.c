@@ -30,16 +30,18 @@ int binary(int *array, int left, int right, int value)
 {
 	int mid = (left + right) / 2;
 
-	if (array == NULL)
+	if (array == NULL || (right + left) == 0)
 		return (-1);
-
-	print_array((array + left), (right - left) + 1);
-
-	if (value == array[left])
-		return (mid);
-	if (array[left] != array[right])
+	if (left <= right)
 	{
-		if (value <= array[mid])
+		print_array((array + left), (right - left) + 1);
+		if (value == array[mid])
+		{
+			if (value == array[mid - 1])
+				return (binary(array, left, mid, value));
+			return (mid);
+		}
+		else if (value < array[mid])
 			return (binary(array, left, mid - 1, value));
 		else if (value > array[mid])
 			return (binary(array, mid + 1, right, value));
@@ -56,7 +58,7 @@ int binary(int *array, int left, int right, int value)
 */
 int advanced_binary(int *array, size_t size, int value)
 {
-	if (array == NULL)
+	if (array == NULL || size == 0)
 		return (-1);
 	return (binary(array, 0, (int)size - 1, value));
 }
