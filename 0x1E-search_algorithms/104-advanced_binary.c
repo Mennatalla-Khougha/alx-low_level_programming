@@ -10,12 +10,15 @@ void print_array(int *array, int size)
 {
 	int i;
 
-	printf("Searching in array: %d", array[0]);
-	for (i = 1; i < size; i++)
-	{
-		printf(", %d", array[i]);
-	}
-	printf("\n");
+		printf("Searching in array: ");
+		for (i = 0; i <= size; i++)
+		{
+			printf("%d", array[i]);
+			if (i < size)
+				printf(", ");
+			else
+				printf("\n");
+		}
 }
 
 /**
@@ -32,15 +35,15 @@ int binary(int *array, int left, int right, int value)
 
 	if (left <= right)
 	{
-		print_array((array + left), (right - left) + 1);
-		if (array[mid] > value)
-			return (binary(array, left, mid - 1, value));
-		else if (array[mid] < value)
-			return (binary(array, mid + 1, right, value));
-		else if (array[mid] == value && array[mid - 1] == value)
+		print_array((array + left), (right - left));
+		if (value == array[mid] && value == array[mid - 1])
 			return (binary(array, left, mid, value));
-		else if (array[mid] == value)
+		else if (value == array[mid])
 			return (mid);
+		else if (value < array[mid])
+			return (binary(array, left, mid - 1, value));
+		else if (value > array[mid])
+			return (binary(array, mid + 1, right, value));
 	}
 	return (-1);
 }
