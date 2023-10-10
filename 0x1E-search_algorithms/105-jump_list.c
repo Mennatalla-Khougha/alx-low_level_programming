@@ -21,7 +21,7 @@ listint_t *jump_list(listint_t *list, size_t size, int value)
 	{
 		if (value == list->n)
 		{
-			printf("Value checked at index [0] = [%d]\n", i, list->n);
+			printf("Value checked at index [0] = [%d]\n", list->n);
 			return (list);
 		}
 		else
