@@ -17,6 +17,8 @@ listint_t *jump_list(listint_t *list, size_t size, int value)
 
 	if (list == NULL || size == 0)
 		return (NULL);
+	if (value < list->n)
+		return (NULL);
 	for (i = jump; i < (int)size; i += jump)
 	{
 		while ((int)tmp->index != i)
@@ -45,4 +47,3 @@ listint_t *jump_list(listint_t *list, size_t size, int value)
 	}
 	return (NULL);
 }
-
