@@ -17,17 +17,6 @@ listint_t *jump_list(listint_t *list, size_t size, int value)
 
 	if (list == NULL || size == 0)
 		return (NULL);
-	if (size == 1)
-	{
-		if (value == list->n)
-		{
-			printf("Value checked at index [0] = [%d]\n", list->n);
-			return (list);
-		}
-		else
-			return (NULL);
-	}
-
 	jump = sqrt((int)size);
 	for (i = jump; i < (int)size; i += jump)
 	{
@@ -59,6 +48,5 @@ listint_t *jump_list(listint_t *list, size_t size, int value)
 		list = list->next;
 	}
 	return (NULL);
-
 }
 
