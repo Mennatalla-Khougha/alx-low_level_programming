@@ -33,14 +33,14 @@ int binary(int *array, int left, int right, int value)
 	if (left <= right)
 	{
 		print_array((array + left), (right - left) + 1);
-		if (value == array[mid] && value == array[mid - 1])
-			return (binary(array, left, mid, value));
-		else if (value == array[mid])
-			return (mid);
-		else if (value < array[mid])
+		if (value < array[mid])
 			return (binary(array, left, mid - 1, value));
+		else if (value == array[mid] && value == array[mid - 1])
+			return (binary(array, left, mid, value));
 		else if (value > array[mid])
 			return (binary(array, mid + 1, right, value));
+		else if (value == array[mid])
+			return (mid);
 	}
 	return (-1);
 }
